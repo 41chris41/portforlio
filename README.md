@@ -1,2 +1,2 @@
-# portforlio
+# Portforlio
 Projects and work experience 
