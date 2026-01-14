@@ -13,9 +13,11 @@ Files overview:
 - `scripts.js` — Small JS utilities (lightbox + active nav highlighting)
 
 Quick notes
-- To replace the portrait: add `photo.jpg` to the project root.
-- Replace artwork images `art1.jpg` through `art10.jpg` in the repo and they will show on the Art page.
-- Garden fence and kjøleteknikk galleries use placeholders (`placeholder1.jpg`, ...). Replace them with your images.
+- The site currently uses temporary hosted placeholder images so pages display correctly while you provide originals. To use local images, add files with these names to the project root or update the `img src` in each page:
+  - `photo.jpg` — portrait (~400×400)
+  - `art1.jpg` … `art10.jpg` — artwork (approx. 800×600)
+  - `placeholder1.jpg` … `placeholder4.jpg` — project/gallery images (approx. 600×400)
+Once you add files with those names, they will appear automatically.
 
 Lightbox & active nav
 - I added a lightweight image lightbox: click a gallery image (selectors: `.gallery img`, `.art-card img`, `.project-card img`) to open it; click the overlay or press Esc to close.
