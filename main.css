@@ -1,21 +1,36 @@
 /* Minimal portfolio stylesheet inspired by example site */
 :root{
-  --accent:#BF1F1F;
+  --accent:#2a0000; /* much darker burgundy */
   --accent-dark:#000;
-  --muted:#666;
-  --bg:#ffffff;
-  --text:#111;
+  --muted:#8f9396;
+  --bg:#000000;
+  --text:#ffffff;
   --maxw:1100px;
-}
+  --accent-yellow:#FFD400; /* bright yellow for link hover */
+
+  /* Animation positioning vars */
+  --anim-left: -20vw; /* distance from left of viewport */
+  --anim-width: min(80vw, 1200px); /* width of animation */
+  --anim-gap: 8px; /* desired gap between animation and about box */
+}  
 *{box-sizing:border-box}
 html{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased}
-body{margin:0;color:var(--text);background:#fff}
+body{margin:0;color:var(--text);background:var(--bg)}
+
+/* Ensure white page text sits on white cards which use dark text */
+.card, .project-card, .art-card { color:#111 }
+
+/* Page hero titles should be light on the dark page background */
+.hero-text h1 { color: var(--text) }
+
+/* Footer contrast */
+.site-footer { background:#0b0b0b }
 .container{width:90%;max-width:var(--maxw);margin:0 auto;padding:36px 0}
 
 /* Hero */
-.hero{display:flex;flex-direction:column;align-items:center;gap:20px;padding:80px 20px 40px;background:linear-gradient(180deg, rgba(191,31,31,0.06), #fff)}
+.hero{display:flex;flex-direction:column;align-items:center;gap:20px;padding:120px 20px 60px;background:linear-gradient(180deg, rgba(42,0,0,0.06), #000)}
 .hero-inner{display:flex;align-items:center;gap:20px;width:90%;max-width:var(--maxw)}
-.hero-photo{width:140px;height:140px;border-radius:999px;object-fit:cover;border:3px solid rgba(191,31,31,0.12)}
+.hero-photo{width:140px;height:140px;border-radius:999px;object-fit:cover;border:3px solid rgba(42,0,0,0.12)}
 .hero-text h1{font-family:'Audiowide', cursive;font-size:52px;margin:0;color:var(--accent);letter-spacing:0.5px}
 .hero p.lead{max-width:760px;color:var(--muted);margin:6px 0 0}
 
@@ -27,13 +42,13 @@ body{margin:0;color:var(--text);background:#fff}
 
 /* Stacked content blocks like example site */
 .block{width:90%;max-width:var(--maxw);margin:24px auto;background:transparent}
-.card{background:#fff;padding:26px;border-radius:6px;border:1px solid #eee;margin-bottom:18px}
+.card{background:#0f0f0f;color:var(--text);padding:26px;border-radius:6px;border:1px solid #222;margin-bottom:18px;position:relative;z-index:2} 
 .card h3{margin:0 0 8px}
 .card p{margin:0;color:var(--muted)}
 
 /* Projects grid */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.project-card{background:#fff;padding:18px;border-radius:8px;border:1px solid #eee}
+.project-card{background:#0f0f0f;color:var(--text);padding:18px;border-radius:8px;border:1px solid #222;position:relative;z-index:2} 
 .project-card h3{margin-top:0}
 .project-meta{font-size:13px;color:var(--muted);margin-top:12px}
 
@@ -43,12 +58,12 @@ body{margin:0;color:var(--text);background:#fff}
 
 /* Art page */
 .art-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.art-card{background:#fff;border-radius:6px;overflow:hidden}
+.art-card{background:#0f0f0f;color:var(--text);border-radius:6px;overflow:hidden;position:relative;z-index:2} 
 .art-card img{width:100%;height:320px;object-fit:cover}
 .art-caption{padding:10px;font-family:Georgia, 'Times New Roman', serif;color:var(--muted)}
 
 /* Footer */
-.site-footer{background:#111;color:#fff;padding:28px 0}
+.site-footer{background:#000;color:#fff;padding:12px 0;margin-top:100px;font-size:14px}
 .site-footer .container{display:flex;justify-content:space-between;align-items:center}
 .site-footer a{color:#fff;text-decoration:underline}
 
@@ -71,22 +86,30 @@ body{margin:0;color:var(--text);background:#fff}
 
 /* Compact header and professional portfolio styles */
 .site-header {
-    background: linear-gradient(90deg, #BF1F1F 0%, #000000 100%);
+    background: #000000; /* solid black header */
     border-bottom: 1px solid rgba(255,255,255,0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* Header is visible by default */
-    transform: none;
-    opacity: 1;
-    transition: none;
     color: #fff;
+    padding: 6px 0; /* slightly smaller header */
+    min-height:48px;
+} 
+
+.site-header .header-inner {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:0 12px;
 }
 
-/* .site-header.visible is no longer required on index; kept for backward compatibility */
-.site-header.visible {
-    transform: none;
-    opacity: 1;
+.site-header .site-title {
+    font-size:20px; /* logo-like, slightly smaller */
+    font-weight:700;
+    color:#ffffff; /* Name/logo in white on the left of the header */
+    font-family:'Audiowide', cursive; /* original font */
+    letter-spacing:0.4px;
 }
 
 .site-header .top-nav {
@@ -95,12 +118,16 @@ body{margin:0;color:var(--text);background:#fff}
 }
 
 .site-header .top-nav .nav-inner {
-    padding: 10px 0;
-    align-items: center;
+    padding: 6px 8px; /* match header height */
+    border-radius:10px;
+    background: #000000;
 }
 
 .site-header .top-nav a {
     color: #fff;
+    font-weight:600;
+    font-size:14px; /* a touch smaller for balance */
+    padding:6px 10px;
 }
 
 .site-header .top-nav a:hover,
@@ -108,13 +135,44 @@ body{margin:0;color:var(--text);background:#fff}
     background: rgba(255,255,255,0.08);
 }
 
+/* Home-only hero — animation placeholder and layering */
+.home-hero { position:relative; overflow:hidden; padding: 80px 20px; background:transparent }
+#home-animation { position:fixed; inset:0; z-index:1; pointer-events:none; display:flex; align-items:flex-start; justify-content:flex-start; overflow:visible; padding-left:0; }
+#home-animation .home-lottie { position:absolute; left:var(--anim-left); top:6%; transform:none; width:var(--anim-width); height:auto; opacity:0.94; pointer-events:none; }
+.home-hero .hero-inner { position:relative; z-index:2; width:90%; max-width:var(--maxw); margin:0 auto; justify-content:flex-start }
+
+/* Responsive tuning for very narrow screens */
+@media (max-width:1200px){ :root{ --anim-width: min(75vw,900px); --anim-left: -10vw; } }
+@media (max-width:900px){ :root{ --anim-width: 90vw; --anim-left: -6vw; } }
+@media (max-width:480px){ :root{ --anim-width: 90vw; --anim-left: -4vw; } } }
+.home-hero .hero-text h1 { font-size:48px; margin:0; color:var(--text) }
+.hero-sub { margin-top:6px; color:#666 }
+
+/* Ensure the hero blends with dark pages */
+.hero { background: transparent }
+
+/* Textbox style for the new sections */
+.card.textbox { background: linear-gradient(180deg, #111111, #0f0f0f); border:1px solid #222; color:var(--text); padding:26px; border-radius:8px; max-width:450px; margin:0 auto; }
+.card.textbox a.inline-link{ color:inherit; text-decoration:underline; transition: color .12s ease; }
+.card.textbox a.inline-link:hover, .card.textbox a.inline-link:focus{ color:var(--accent-yellow); text-decoration:none; }
+
+/* Place About box to the right on larger screens so it doesn't hover over the central animation */
+.about-block{display:flex;justify-content:flex-end}
+.about-block .card{max-width:480px;width:100%;position:relative;z-index:2;margin-left:calc(var(--anim-left) + var(--anim-width) + var(--anim-gap) - 100px)}
+@media (max-width:1400px){ .about-block .card{margin-left:calc(var(--anim-left) + var(--anim-width) + var(--anim-gap) - 60px)} }
+@media (max-width:900px){ .about-block{justify-content:center} .about-block .card{max-width:95%;margin-left:0} }
+.card.textbox h3 { margin-top:0 }
+
+/* small-screen adjustments */
+@media (max-width:700px){ .home-hero .hero-inner{flex-direction:column;text-align:center} .home-hero .hero-text h1{font-size:36px} }
+
 /* Hero */
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 56px 20px;
-    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    background: transparent;
 }
 .hero-inner {
     display: flex;
