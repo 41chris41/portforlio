@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="main.css">
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
 </head>
-<body>
+<body class="page-current-projects">
   <main>
     <header class="site-header">
       <div class="container header-inner">
@@ -35,33 +35,60 @@
     </section>
 
     <section class="container">
+
+      <!-- First text-only project box (black, no images) -->
       <div class="projects-grid">
-        <div class="project-card">
-          <h3>Academic Theory on Quantum Mechanics</h3>
-          <p>Working title: "[Placeholder]" — Academic writing project exploring theoretical aspects. (More details to be added.)</p>
-          <p class="project-meta">Status: In progress · Type: Research, Writing</p>
+        <div class="project-card project-box">
+          <h3>Mechanics of Existence</h3>
+          <p>"Mechanics of Existence" — Academic writing project. 
+            Mechanics of Existence is a long-term independent writing and research project focused on systems-level thinking across physics, 
+            neuroscience, and philosophy. The project explores how complex phenomena can be understood through shared structural principles, 
+            with an emphasis on clarity, internal consistency, and first-principles reasoning rather than speculation.
+
+            The work is conducted part-time alongside full-time employment and formal studies, and is intentionally structured as a slow, 
+            long-horizon project. Current efforts are centered on literature review, conceptual mapping, and outlining core questions, with the 
+            long-term goal of producing a coherent manuscript or paper once the framework is sufficiently mature.
+
+            This project reflects a sustained interest in analytical problem-solving, structured thinking, and the ability to work independently on 
+            complex ideas over extended periods of time.</p>
+
+      <!-- Animated progressbar 2% -->
+          <div class="progress"
+     style="--progress:2%;"
+     role="progressbar"
+     aria-valuemin="0"
+     aria-valuemax="100"
+     aria-valuenow="2">
+          <div class="progress-fill"></div>
         </div>
-        <div class="project-card">
-          <h3>Garden Fence</h3>
-          <p>Designing and building a new garden fence. Below is a process gallery showing steps.</p>
-          <div class="gallery">
-            <img src="https://via.placeholder.com/600x400?text=Fence+1" alt="Fence step 1">
-            <img src="https://via.placeholder.com/600x400?text=Fence+2" alt="Fence step 2">
-            <img src="https://via.placeholder.com/600x400?text=Fence+3" alt="Fence step 3">
-            <img src="https://via.placeholder.com/600x400?text=Fence+4" alt="Fence step 4">
-          </div>
-          <p class="project-meta">Status: In progress · Type: Carpentry, Construction</p>
         </div>
       </div>
 
-      <div class="projects-grid" style="margin-top:18px">
-        <div class="project-card">
-          <h3>Project 3 Placeholder</h3>
-          <p>Short description and status placeholder.</p>
+      <!-- Feature block: text box beside a large image (image from /assets/current-projects) -->
+      <div class="project-feature">
+        <div class="feature-image">
+          <!-- Garden Fence feature image from /assets/images/current-projects -->
+          <img src="assets/images/current-projects/fence7.jpg" alt="Garden Fence">
         </div>
-        <div class="project-card">
-          <h3>Project 4 Placeholder</h3>
-          <p>Short description and status placeholder.</p>
+        <div class="feature-content">
+          <div class="project-card">
+            <h3>Garden Fence</h3>
+            <p>Designing and building a new garden fence - Needs to be painted and some more support to sustain the weight. 
+              The project involves planning the layout, selecting materials, and constructing the fence to enhance the garden's aesthetics 
+              and functionality. Started the project in July 2024 and worked on it during free time and some weekends. Its soon to be done! 
+            </p>
+            <p class="project-meta">Status: In progress · Type: Carpentry, Construction</p>
+          </div>
+          <link rel="stylesheet" href="css/styles.css">
+          <!-- Animated progress bar (98% done) -->
+          <div class="progress progress-97"
+     role="progressbar"
+     aria-valuemin="0"
+     aria-valuemax="100"
+     aria-valuenow="97">
+  <div class="progress-fill"></div>
+</div>
+
         </div>
       </div>
 
