@@ -56,6 +56,77 @@
     /* logo image dimensions*/ 
     .project-logo {display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:100px}
     .project-logo img{width:30%;height:200px;object-fit:cover;border-radius:8px}
+
+    /* Contact section */
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-card {
+    max-width: 520px;
+    margin: 0 auto;
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 28px;
+}
+
+.contact-card h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    background: #000;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+.contact-card button {
+    margin-top: 8px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact-card button:hover {
+    background: #ddd;
+}
+
     
     /*Past Experience page Logo image dimensions */
     .experience-logo {
