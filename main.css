@@ -835,14 +835,14 @@ fieldset {
         .hero-inner{flex-direction:column;text-align:center}
         .hero-text h1{font-size:36px}.site-footer .container{flex-direction:column;gap:8px;text-align:center}} 
         
-        /* Compact header and professional portfolio styles */ 
+    /* Compact header and professional portfolio styles */ 
         .site-header { background: #000000; /* solid black header */ 
             border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 1000; color: #fff; padding: 6px 0; 
-            /* slightly smaller header */ min-height:48px; } 
+    /* slightly smaller header */ min-height:48px; } 
             .site-header .header-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:0 12px; } 
             .site-header .site-title { font-size:20px; /* logo-like, slightly smaller */ 
                 font-weight:700; color:#ffffff; 
-                /* Name/logo in white on the left of the header */ 
+    /* Name/logo in white on the left of the header */ 
                 font-family:'Audiowide', cursive; /* original font */
                  letter-spacing:0.4px; } 
                  .site-header .top-nav { background: transparent; border-bottom: none; } 
@@ -850,24 +850,24 @@ fieldset {
                  .site-header .top-nav a { color: #fff; font-weight:600; font-size:14px; /* a touch smaller for balance */ padding:6px 10px; } 
                  .site-header .top-nav a:hover, .site-header .top-nav a:focus { background: rgba(255,255,255,0.08); } 
                  
-                 /* Home-only hero — animation placeholder and layering */ 
+    /* Home-only hero — animation placeholder and layering */ 
                  .home-hero { position:relative; overflow:hidden; padding: 80px 20px; background:transparent } 
                  #home-animation { position:fixed; inset:0; z-index:1; pointer-events:none; display:flex; align-items:flex-start; justify-content:flex-start; overflow:visible; padding-left:0; } 
                  #home-animation .home-lottie { position:absolute; left:var(--anim-left); top:6%; transform:none; width:var(--anim-width); height:auto; opacity:0.94; pointer-events:none; } 
                 .home-hero .hero-inner { position:relative; z-index:2; width:90%; max-width:var(--maxw); margin:0 auto; justify-content:flex-start } 
                 
-                /* Responsive tuning for very narrow screens */ 
+    /* Responsive tuning for very narrow screens */ 
                 @media (max-width:1200px){ :root{ --anim-width: min(75vw,900px); --anim-left: -10vw; } } 
                 @media (max-width:900px){ :root{ --anim-width: 90vw; --anim-left: -6vw; } } @media (max-width:480px){ :root{ --anim-width: 90vw; --anim-left: -4vw; } } } 
                 .home-hero .hero-text h1 { font-size:48px; margin:0; color:var(--text) } .hero-sub { margin-top:6px; color:#666 } 
                 
-                /* Ensure the hero blends with dark pages */ 
+   /* Ensure the hero blends with dark pages */ 
                 .hero { background: transparent } /* Textbox style for the new sections */ 
                 .card.textbox { background: linear-gradient(180deg, #111111, #0f0f0f); border:1px solid #222; color:var(--text); padding:26px; border-radius:8px; max-width:450px; margin:0 auto; } 
-                .card.textbox a.inline-link{ color:inherit; text-decoration:underline; transition: color .12s ease; } 
+                .card.textbox a.inline-link{ color: #ffffff;; text-decoration:underline; transition: color .12s ease; } 
                 .card.textbox a.inline-link:hover, .card.textbox a.inline-link:focus{ color:var(--accent-yellow); text-decoration:none; } 
                 
-                /* Place About box to the right on larger screens so it doesn't hover over the central animation */ 
+    /* Place About box to the right on larger screens so it doesn't hover over the central animation */ 
                 .about-block{display:flex;justify-content:flex-end} 
                 .about-block .card{max-width:480px;width:100%;position:relative;z-index:2;margin-left:calc(var(--anim-left) + var(--anim-width) + var(--anim-gap) - 100px)} 
                 @media (max-width:1400px){ .about-block .card{margin-left:calc(var(--anim-left) + var(--anim-width) + var(--anim-gap) - 60px)} } 
@@ -875,7 +875,7 @@ fieldset {
                 .card.textbox h3 { margin-top:0 } /* small-screen adjustments */ @media (max-width:700px){ 
                     .home-hero .hero-inner{flex-direction:column;text-align:center} 
                     .home-hero .hero-text h1{font-size:36px} } 
-                    /* Hero */ 
+    /* Hero */ 
                     .hero { display: flex; align-items: center; justify-content: center; padding: 56px 20px; background: transparent; } 
                     .hero-inner { display: flex; align-items: center; gap: 20px; width: 90%; max-width: 900px; } 
                     .hero-photo { width: 120px; height: 120px; object-fit: cover; border-radius: 999px; border: 3px solid #e6e6e6; } 
@@ -884,19 +884,20 @@ fieldset {
                     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; } 
                     .project-card { background: #fff; padding: 16px; border-radius: 8px; border: 1px solid #e6e6e6; box-shadow: 0 1px 2px rgba(16,24,40,0.03); } 
                     
-                    /* Current Projects overrides and components (placed after base .project-card for specificity) */ 
+    /* Current Projects overrides and components (placed after base .project-card for specificity) */ 
                     .page-current-projects .hero-text h1 { color: var(--text); } 
                     .page-current-projects .project-card, .page-current-projects .project-box { 
                         background:#0f0f0f; color:var(--text); border:1px solid #222; box-shadow:none; } 
                         
-                        /* Progress bar styles */ /* Progress bar */ 
+    /* Progress bar styles */ /* Progress bar */ 
                         .progress { height:12px; background:#111; border-radius:8px; overflow:hidden; margin-top:12px; } 
                         .progress-fill { height:100%; background:#BF1F1F; width:var(--progress); animation:fill 1.6s ease; } @keyframes fill { from { width:0%; } } 
-                        /* Percentage modifiers */ 
+                       
+    /* Percentage modifiers */ 
                         .progress-2 .progress-fill { width:2%; } 
                         .progress-97 .progress-fill { width:97%; } @keyframes fill { from { width:0%; } } 
                         
-                        /* Feature block (image + text) */ 
+    /* Feature block (image + text) */ 
                         .project-feature{display:flex;gap:20px;align-items:center;margin-top:22px} 
                         .project-feature .feature-image{flex:1 1 60%} 
                         .project-feature .feature-image img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block} 
@@ -905,7 +906,7 @@ fieldset {
                         .project-card h3 { margin-top: 0; } 
                         .project-card .meta { color: #666; font-size: 13px; margin-top: 10px; } 
                         
-                        /* Page accents (each page can set body class like .page-working-projects) */ 
+    /* Page accents (each page can set body class like .page-working-projects) */ 
                         .page-working-projects .hero { background: linear-gradient(90deg,#e6f4ff,#ffffff); } 
                         .page-done-projects .hero { background: linear-gradient(90deg,#fff7e6,#ffffff); } 
                         .page-courses .hero { background: linear-gradient(90deg,#f7f7ff,#ffffff); } 
@@ -916,5 +917,4 @@ fieldset {
                         .page-future-goals .hero { background: linear-gradient(90deg,#f2fff0,#ffffff); } @media (max-width: 600px) { 
                             .top-nav .nav-inner { gap: 8px; padding: 8px 0; } 
                             .hero-inner { flex-direction: column; text-align: center;}
-
 
